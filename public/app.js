@@ -1,7 +1,8 @@
 const BTN = document.querySelector('.box')
 const CONTENT = document.querySelector('.content')
+const LANGUAGE = document.getElementById('changeLang')
 
-const salam = ['salam che khabar']
+const salam = ['hello friend whats up?']
 const Expressions = [
     'hello whats going on bro',
     'hello there',
@@ -34,9 +35,12 @@ const Introduction = [
     'my name is Mester-robot i am  a AI man and my creator make me in 2020',
     'im Mester-robot and who are you'
 ]
-
-const VoiceRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+// window.SpeechRecognition ||
+const VoiceRecognition =  window.webkitSpeechRecognition;
 const Recognition = new VoiceRecognition()
+const changeLanguage = () =>{
+    LANGUAGE.options[LANGUAGE.selectedIndex].value === "fa" ? Recognition.lang = "fa-IR" : Recognition.lang = "en-US"
+} 
 
 Recognition.onstart = () => {
     console.log("voice activated");
@@ -67,7 +71,7 @@ const ReadRecognition = (msg) => {
         const finalResult = bye[Math.floor(Math.random() * bye.length)]
         speech.text = finalResult
     }
-    if (msg.includes('salam')) {
+    if (msg.includes('سلام')) {
         const finalResult = salam[Math.floor(Math.random() * salam.length)]
         speech.text = finalResult
     }
@@ -76,10 +80,22 @@ const ReadRecognition = (msg) => {
         const finalResult = Introduction[Math.floor(Math.random() * Introduction.length)]
         speech.text = finalResult
     }
-
+    // speech.lang = "fa-IR"
     speech.volume = 1
     speech.rate = 1
     speech.pitch = 20
-
     window.speechSynthesis.speak(speech)
+
+    //add voice - not working yet in farsi 
+    // let synth = window.speechSynthesis
+    // var voices = synth.getVoices();
+    // console.log(voices);
+    // for(i = 0; i < voices.length ; i++) {
+    //       speech.voice = voices[i];
+    // }
+    // console.log(speech);
+    // synth.speak(speech)
+    
 }
+
+

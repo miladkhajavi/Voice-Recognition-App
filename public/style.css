@@ -58,6 +58,8 @@ background-color: #eeeeee;
     font-family:fantasy;
     display: flex;
     justify-content: center;
+    font-weight: lighter;
+    font-size: 100px;
   }
   .box span{
     display:inline-block;
