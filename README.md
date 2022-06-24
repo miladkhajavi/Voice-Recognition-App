@@ -6,9 +6,9 @@
   </a>
 </p>
 
-> Voice-Recognition-App (FA-IR / EN/US)
+> Voice-Recognition-App (FA-IR / EN-US)
 <p align="center">
-  <img src="./public/mrrobot.png" style="display:block;margin-left:auto;margin-right:auto;width:300px;">
+  <img src="./public/mrrobot.png" style="display:block;margin-left:auto;margin-right:auto;width:250px;">
 </p>
 
 ## Author`
